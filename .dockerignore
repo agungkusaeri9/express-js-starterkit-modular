@@ -1,0 +1,11 @@
+# Abaikan folder dependensi lokal
+node_modules
+
+# Abaikan folder hasil build lokal
+dist
+
+# Abaikan file environment lokal
+.env
+
+# Abaikan log npm
+npm-debug.log

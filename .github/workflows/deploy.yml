@@ -36,4 +36,4 @@ jobs:
             docker pull ghcr.io/${{ secrets.GHCR_USERNAME }}/express-backend:latest
             docker stop express-backend || true
             docker rm express-backend || true
-            docker run -d --name express-backend -p 6000:6000 --env-file /root/.env.production ghcr.io/${{ secrets.GHCR_USERNAME }}/express-backend:latest
+            docker run -d --name express-backend -p 6000:6000 --env-file /agungkusaeri9/.env.production ghcr.io/${{ secrets.GHCR_USERNAME }}/express-backend:latest

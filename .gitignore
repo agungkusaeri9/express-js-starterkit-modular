@@ -1,0 +1,44 @@
+/src/generated/prisma
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.*       # kalau ada .env.local, .env.test dll
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+prisma/test.db
+prisma/test.db-journal
+node_modules/.prisma/
+
+# Logs
+logs
+*.log
+*.log.*
+*.out
+*.pid
+*.seed
+
+# Typescript
+*.tsbuildinfo
+*.tgz
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Debug
+*.swp

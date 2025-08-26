@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import * as authService from "./auth.service";
 import { responseFormatter } from "../../utils/response-formatter";
+import { authService } from "./auth.service";
 
 export const login = async (
   req: Request,

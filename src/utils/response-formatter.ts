@@ -26,7 +26,7 @@ export const responseFormatter = {
   error: (
     res: Response,
     message: string,
-    errors?: Record<string, string[]>,
+    errors?: Record<string, string[]> | null,
     httpCode: number = 400
   ) => {
     const body: ApiResponse = { status: false, message };

@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
-import * as userService from "./user.service";
 import { responseFormatter } from "../../utils/response-formatter";
 import { ApiResponse } from "../../types/api-response";
 import prisma from "../../utils/prisma";
+import { AuthRequest } from "../../middlewares/auth.middleware";
+import { userService } from "./user.service";
 
 // Create
 export const create = async (req: Request, res: Response) => {
@@ -44,4 +45,11 @@ export const update = async (req: Request, res: Response) => {
 export const remove = async (req: Request, res: Response) => {
   const user = await userService.deleteUser(Number(req.params.id));
   return responseFormatter.success(res, "User deleted", user);
+};
+
+export const me = async (req: AuthRequest, res: Response) => {
+  const user = req.user;
+  console.log(user);
+  const result = await userService.getUserById(user?.userId!);
+  return responseFormatter.success(res, "User fetched", result);
 };

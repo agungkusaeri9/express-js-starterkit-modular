@@ -6,6 +6,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { errorHandler } from "./middlewares/error.middleware";
 import { httpLogger } from "./middlewares/http-logger.middleware";
+import { authMiddleware } from "./middlewares/auth.middleware";
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ app.use(express.json());
 app.use(httpLogger);
 
 app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
+app.use("/api/users", authMiddleware, userRoutes);
 
 app.use(errorHandler);
 

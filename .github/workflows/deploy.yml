@@ -2,7 +2,7 @@ name: Build and Deploy Express App
 
 on:
   push:
-    branches: [main] # jalan tiap ada push ke main
+    branches: [main]
 
 jobs:
   build-and-deploy:

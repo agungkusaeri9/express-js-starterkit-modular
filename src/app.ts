@@ -17,6 +17,10 @@ app.use(express.json());
 
 app.use(httpLogger);
 
+app.get("/", (req, res) => {
+  res.json({ message: "pong" });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/users", authMiddleware, userRoutes);
 
